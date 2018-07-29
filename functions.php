@@ -102,8 +102,6 @@ add_action( 'widgets_init', 'derek_houck_web_design_widgets_init' );
 function derek_houck_web_design_scripts() {
 	wp_enqueue_style( 'derek-houck-web-design-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'derek-houck-web-design-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
-
 	wp_enqueue_script( 'derek-houck-web-design-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
