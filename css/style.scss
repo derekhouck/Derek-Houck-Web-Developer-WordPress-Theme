@@ -35,24 +35,16 @@ Tags:
 	## Galleries
 	## Slides
 # Layout
+    ## Home
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
 # Imports
 --------------------------------------------------------------*/
 
+@import 'fonts';
 @import 'mixins';
 
-
-/*--------------------------------------------------------------
-# Fonts
---------------------------------------------------------------*/
-@font-face {
-  font-family: 'menu';
-  src: url("font/menu.eot?5105251");
-  src: url("font/menu.eot?5105251#iefix") format("embedded-opentype"), url("font/menu.woff?5105251") format("woff"), url("font/menu.ttf?5105251") format("truetype"), url("font/menu.svg?5105251#menu") format("svg");
-  font-weight: normal;
-  font-style: normal; }
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
@@ -425,6 +417,10 @@ textarea {
   font-size: 1rem;
   line-height: 1.5; }
 
+cite {
+    font-style: normal;
+}
+
 footer {
   font-size: 0.875em; }
 
@@ -451,13 +447,16 @@ p {
   margin: 0 0 1em; }
 
 dfn,
-cite,
 em,
 i {
   font-style: italic; }
 
 blockquote {
-  margin: 0 1.5em 2em; }
+  margin: 2em 1.5em 0; 
+  p {
+      margin-bottom: 0.5em;
+  }
+}
 
 address {
   margin: 0 0 1.5em; }
@@ -1163,5 +1162,38 @@ img.portrait {
   opacity: 0; }
 #napoleon:hover #armsup {
   opacity: 1; }
+
+/*--------------------------------------------------------------
+# Layout
+--------------------------------------------------------------*/
+.home .entry-content {
+    align-items: flex-end;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    & > div {
+        flex: 1 1 100%;
+    }
+    .cycle-nav {
+        order: 0;
+    }
+    .cycle-slideshow {
+        order: 1;
+    }
+    .wp-block-quote {
+        order: 2;
+    }
+}
+@include respond-to('small') {
+    .home .wp-block-quote {
+        box-sizing: border-box;
+        flex: 0 1 calc(50% - 3em);
+    }
+}
+
+@include respond-to('medium') {
+    .home .wp-block-quote {
+    }
+}
 
 /*# sourceMappingURL=style.css.map */

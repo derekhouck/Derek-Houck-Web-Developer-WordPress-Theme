@@ -35,6 +35,7 @@ Tags:
 	## Galleries
 	## Slides
 # Layout
+    ## Home
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 # Imports
@@ -420,6 +421,9 @@ textarea {
   font-size: 1rem;
   line-height: 1.5; }
 
+cite {
+  font-style: normal; }
+
 footer {
   font-size: 0.875em; }
 
@@ -446,13 +450,14 @@ p {
   margin: 0 0 1em; }
 
 dfn,
-cite,
 em,
 i {
   font-style: italic; }
 
 blockquote {
-  margin: 0 1.5em 2em; }
+  margin: 2em 1.5em 0; }
+  blockquote p {
+    margin-bottom: 0.5em; }
 
 address {
   margin: 0 0 1.5em; }
@@ -1119,6 +1124,27 @@ img.portrait {
 #napoleon:hover #armsup {
   opacity: 1; }
 
+/*--------------------------------------------------------------
+# Layout
+--------------------------------------------------------------*/
+.home .entry-content {
+  align-items: flex-end;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center; }
+  .home .entry-content > div {
+    flex: 1 1 100%; }
+  .home .entry-content .cycle-nav {
+    order: 0; }
+  .home .entry-content .cycle-slideshow {
+    order: 1; }
+  .home .entry-content .wp-block-quote {
+    order: 2; }
+
+@media (min-width: 767px) {
+  .home .wp-block-quote {
+    box-sizing: border-box;
+    flex: 0 1 calc(50% - 3em); } }
 /*# sourceMappingURL=style.css.map */
 
 /*# sourceMappingURL=style.css.map */
