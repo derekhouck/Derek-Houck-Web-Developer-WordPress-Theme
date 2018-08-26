@@ -36,6 +36,7 @@ Tags:
 	## Slides
 # Layout
     ## Home
+    ## Blocks
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 # Imports
@@ -455,7 +456,7 @@ i {
   font-style: italic; }
 
 blockquote {
-  margin: 2em 1.5em 0; }
+  margin: 1em 1.5em; }
   blockquote p {
     margin-bottom: 0.5em; }
 
@@ -781,12 +782,10 @@ h1 a:active, h1 a:hover, .main-navigation a:active, .main-navigation a:hover {
 # Alignments
 --------------------------------------------------------------*/
 .alignleft {
-  display: inline;
   float: left;
   margin-right: 1.5em; }
 
 .alignright {
-  display: inline;
   float: right;
   margin-left: 1.5em; }
 
@@ -1125,7 +1124,7 @@ img.portrait {
   opacity: 1; }
 
 /*--------------------------------------------------------------
-# Layout
+## Home
 --------------------------------------------------------------*/
 .home .entry-content {
   align-items: flex-end;
@@ -1138,13 +1137,30 @@ img.portrait {
     order: 0; }
   .home .entry-content .cycle-slideshow {
     order: 1; }
-  .home .entry-content .wp-block-quote {
+  .home .entry-content .featured-testimonial {
     order: 2; }
+  .home .entry-content .wp-block-quote {
+    order: 3; }
 
 @media (min-width: 767px) {
   .home .wp-block-quote {
     box-sizing: border-box;
     flex: 0 1 calc(50% - 3em); } }
+/*--------------------------------------------------------------
+## Blocks
+--------------------------------------------------------------*/
+.featured-testimonial {
+  align-items: center;
+  border: 0.25rem solid black;
+  display: flex;
+  flex-flow: row wrap-reverse;
+  margin: 1rem 0; }
+  .featured-testimonial .wp-block-quote {
+    min-width: 15em; }
+
+.featured-testimonial__headshot img {
+  border-radius: 50%; }
+
 /*# sourceMappingURL=style.css.map */
 
 /*# sourceMappingURL=style.css.map */

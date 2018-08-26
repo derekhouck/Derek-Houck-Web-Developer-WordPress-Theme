@@ -36,6 +36,7 @@ Tags:
 	## Slides
 # Layout
     ## Home
+    ## Blocks
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
@@ -452,7 +453,7 @@ i {
   font-style: italic; }
 
 blockquote {
-  margin: 2em 1.5em 0; 
+  margin: 1em 1.5em; 
   p {
       margin-bottom: 0.5em;
   }
@@ -807,12 +808,10 @@ h1 a:active, h1 a:hover, .main-navigation a:active, .main-navigation a:hover {
 # Alignments
 --------------------------------------------------------------*/
 .alignleft {
-  display: inline;
   float: left;
   margin-right: 1.5em; }
 
 .alignright {
-  display: inline;
   float: right;
   margin-left: 1.5em; }
 
@@ -1164,7 +1163,7 @@ img.portrait {
   opacity: 1; }
 
 /*--------------------------------------------------------------
-# Layout
+## Home
 --------------------------------------------------------------*/
 .home .entry-content {
     align-items: flex-end;
@@ -1180,8 +1179,11 @@ img.portrait {
     .cycle-slideshow {
         order: 1;
     }
+    .featured-testimonial {
+      order: 2;
+    }
     .wp-block-quote {
-        order: 2;
+        order: 3;
     }
 }
 @include respond-to('small') {
@@ -1192,8 +1194,24 @@ img.portrait {
 }
 
 @include respond-to('medium') {
-    .home .wp-block-quote {
-    }
+}
+
+/*--------------------------------------------------------------
+## Blocks
+--------------------------------------------------------------*/
+
+.featured-testimonial {
+  align-items: center;
+  border: 0.25rem solid black;
+  display: flex;
+  flex-flow: row wrap-reverse;
+  margin: 1rem 0;
+  .wp-block-quote {
+    min-width: 15em;
+  }
+}
+.featured-testimonial__headshot img {
+  border-radius: 50%;
 }
 
 /*# sourceMappingURL=style.css.map */
